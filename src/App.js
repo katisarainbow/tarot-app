@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cards from "./components/cards";
 import Categories from "./components/categories";
-import TheGreaterArcana from "./components/tga";
-import TheLesserArcana from "./components/tla";
 
 function App() {
 	const [cards, setCards] = useState();
