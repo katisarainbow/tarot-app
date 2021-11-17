@@ -4,7 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-
+*.swl
+*.swm
+*.swo
+*.swn
+*.swp
 # testing
 /coverage
 
