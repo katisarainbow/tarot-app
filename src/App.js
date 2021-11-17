@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Cards from "./components/cards";
-import Categories from "./components/categories";
+import Cards from "./components/Cards";
+import Categories from "./components/Categories";
 
 function App() {
 	const [cards, setCards] = useState();
