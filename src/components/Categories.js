@@ -1,17 +1,15 @@
-
-const Categories = () => {
-  const allCategories =  ['All', 'The Greater Arcana', 'The Lesser Arcana']; 
-	return(
+const Categories = ({ handleButtonClick }) => {
+	return (
 		<div>
-		 {allCategories.map((category, index) => {
-			return (
-			<button className='btn-cat' key={index}>
-			{category}		
+			<button onClick={() => handleButtonClick("all")}>All</button>
+			<button onClick={() => handleButtonClick("major")}>
+				The Greater Arcana
 			</button>
-			)}
-		 )}
+			<button onClick={() => handleButtonClick("minor")}>
+				The Lesser Arcana
+			</button>
 		</div>
-)
-}
+	);
+};
 
 export default Categories;

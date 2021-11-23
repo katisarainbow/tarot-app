@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Cards from "./components/Cards";
 import Categories from "./components/Categories";
+import TheGreaterArcana from "./components/TheGreaterArcana";
+import TheLesserArcana from "./components/TheLesserArcana";
 
 function App() {
 	const [cards, setCards] = useState();
+	const [allCategories, setAllCategories] = useState("all");
 
 	useEffect(() => {
 		fetch("https://rws-cards-api.herokuapp.com/api/v1/cards")
@@ -14,13 +16,32 @@ function App() {
 			});
 	}, []);
 
+	const filterComponents = () => {
+		if (allCategories === "major") {
+			return <TheGreaterArcana cards={cards} />;
+		} else if (allCategories === "minor") {
+			return <TheLesserArcana cards={cards} />;
+		} else {
+			return (
+				<>
+					<TheGreaterArcana cards={cards} />
+					<TheLesserArcana cards={cards} />
+				</>
+			);
+		}
+	};
+
+	const handleButtonClick = (newCategory) => {
+		setAllCategories(newCategory);
+	};
+
 	return (
 		<div className="App">
 			<div>
 				<img src="" />
-				<Categories />
+				<Categories handleButtonClick={handleButtonClick} />
 			</div>
-		{cards && <Cards cards={cards}/>}
+			{cards && filterComponents()}
 		</div>
 	);
 }
