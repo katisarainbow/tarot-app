@@ -11,16 +11,9 @@ const TheGreaterArcana = ({ cards }) => {
 				if (type === "major") {
 					return (
 						<div>
-							<button
-								onClick={() => {
-									if (showCard !== name) {
-										setShowCard(name);
-									} else {
-										setShowCard(false);
-									}
-								}}
-							>
-								{name}
+							<button className='pixel'
+								onClick={() => setShowCard(showCard !== name ? name : false)}>
+								<p>{name}</p>
 							</button>
 							{showCard === name && (
 								<div id={name_short}>

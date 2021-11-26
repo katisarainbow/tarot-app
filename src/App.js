@@ -20,20 +20,22 @@ function App() {
 		if (allCategories === "major") {
 			return <TheGreaterArcana cards={cards} />;
 		} else if (allCategories === "minor") {
-			return <TheLesserArcana cards={cards} />;
+			return <TheLesserArcana cards={cards}/>;
 		} else {
 			return (
 				<>
 					<TheGreaterArcana cards={cards} />
-					<TheLesserArcana cards={cards} />
+					<TheLesserArcana cards={cards}/>
 				</>
 			);
 		}
 	};
 
+
 	const handleButtonClick = (newCategory) => {
 		setAllCategories(newCategory);
 	};
+
 
 	return (
 		<div className="App">
@@ -41,7 +43,9 @@ function App() {
 				<img src="" />
 				<Categories handleButtonClick={handleButtonClick} />
 			</div>
-			{cards && filterComponents()}
+			<div className='container'>
+				{cards && filterComponents()}
+			</div>
 		</div>
 	);
 }
