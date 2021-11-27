@@ -39,8 +39,8 @@ function App() {
 
 	return (
 		<div className="App">
-			<div>
-				<img src="" />
+			<div className="header">
+				<h1 className="title"> Tarot Meanings </h1>
 				<Categories handleButtonClick={handleButtonClick} />
 			</div>
 			<div className='container'>

@@ -26,7 +26,7 @@ const TheLesserArcana = ({ cards }) => {
 								<p>{name}</p>
 								</button>
 								{showCard === name && (
-									<div className='container'>
+									<div>
 										<h2>{name}</h2>
 										<p>{desc}</p>
 										<h3> Meaning rev: </h3>

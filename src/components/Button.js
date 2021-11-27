@@ -5,7 +5,7 @@ const Button = ({filterCard}) => {
 		<div>
 			{allMinorCategories.map((category, index) => {
 				const categoryLower = category.toLowerCase();
-				return <button onClick={()=> filterCard(categoryLower)} key={index}>{category}</button>;
+				return <button onClick={()=> filterCard(categoryLower)} key={index} className="btn-minor">{category}</button>;
 			})}
 		</div>
 	);
